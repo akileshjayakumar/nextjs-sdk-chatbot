@@ -1,44 +1,60 @@
 # Next.js SDK Chatbot
 
-Here is the link to the live site: [https://nextjs-sdk-chatbot.vercel.app](https://nextjs-sdk-chatbot.vercel.app)
+A simple streaming chatbot built with Next.js, Vercel AI SDK, and OpenAI.
 
-## Tech Stack
+Live demo: [nextjs-sdk-chatbot.vercel.app](https://nextjs-sdk-chatbot.vercel.app)
 
-- **Frontend:**
-  - **[Next.js](https://nextjs.org/docs)**
-  - **[React](https://react.dev/)**
-  - **[TailwindCSS](https://tailwindcss.com/docs)**
-  - **[shadcn/ui](https://ui.shadcn.com/docs)**
+## Quick Start
 
-- **APIs:**
-  - **[OpenAI API](https://platform.openai.com/docs)**
+```bash
+git clone https://github.com/akileshjayakumar/nextjs-sdk-chatbot.git
+cd nextjs-sdk-chatbot
+npm install
+```
 
-- **Version Control:**
-  - **[Git](https://git-scm.com/doc)**
+Create `.env.local`:
 
-- **Deployment:**
-  - **[Vercel](https://vercel.com/docs)**
-  - **[GitHub](https://docs.github.com/en)** (for source control and CI/CD workflows)
+```bash
+OPENAI_API_KEY=your_openai_api_key
+```
 
-## Setup
+Run locally:
 
-To run this project locally, follow these steps:
+```bash
+npm run dev
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/akileshjayakumar/nextjs-sdk-chatbot.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd nextjs-sdk-chatbot
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-5. **Access the application:**
-   Open `http://localhost:3000` in your web browser to interact with the Chatbot.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Core Capabilities
+
+- Streaming assistant responses in the chat UI
+- Server-side OpenAI call in `src/app/api/chat/route.ts`
+- Edge runtime for low-latency request handling
+- Tailwind + shadcn/ui components for a clean, responsive interface
+
+## Configuration
+
+Required environment variable:
+
+- `OPENAI_API_KEY`: API key used by the chat route
+
+The default model is set in `src/app/api/chat/route.ts`. Update it if needed for your OpenAI account/project.
+
+## Usage
+
+1. Start the app with `npm run dev`.
+2. Type a message in the input box.
+3. Submit and watch the assistant stream the reply in real time.
+
+## Contributing and Testing
+
+- Run lint checks: `npm run lint`
+- Build for production: `npm run build`
+- Start production server: `npm run start`
+
+PRs are welcome for UI improvements, model/provider updates, and chat UX enhancements.
+
+## License
+
+[MIT](LICENSE)
